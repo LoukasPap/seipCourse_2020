@@ -1,1 +1,6 @@
 /target/
+
+# IDE-specific files and directories
+.project
+.settings/
+.classpath
