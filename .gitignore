@@ -1,3 +1,8 @@
+# IDE-specific files and directories
+.project
+.settings/
+.classpath
+
 #Maven ignore
 target/
 pom.xml.tag
