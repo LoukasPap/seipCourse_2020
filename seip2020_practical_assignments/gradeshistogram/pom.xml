@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   	<modelVersion>4.0.0</modelVersion>
   	<parent>
     	<groupId>gr.aueb.dmst.loukaspapadopoulos</groupId>
@@ -6,15 +8,20 @@
     	<version>0.0.1-SNAPSHOT</version>
   	</parent>
   	<artifactId>gradeshistogram</artifactId>
-  	<name>MM1</name>
- 	<description>This is the Maven Module 1.</description>
+  	<name>histogramgenerator</name>
+ 	<description>
+ 		This is the 2nd Assignment of SEiP course.
+ 		This modules creates a histogram from a given file of grades.
+		The generated jar is a "fat-jar" that includes the dependency 
+		in the main executable jar.
+	</description>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.jfree/jfreechart -->
 		<dependency>
-		<groupId>org.jfree</groupId>
-		<artifactId>jfreechart</artifactId>
-		<version>1.5.0</version>
+			<groupId>org.jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.5.0</version>
 		</dependency>
 	</dependencies>
 	<build>
