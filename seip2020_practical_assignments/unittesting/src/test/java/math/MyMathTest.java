@@ -21,7 +21,23 @@ public class MyMathTest {
 	MyMath mm = new MyMath();
 	
 	/*
-	 *  A test case for the exception caused when the input is <0
+	 *  A test case for n equal to 0.
+	 */
+	@Test
+	public void testFactorialForNTequalsTo0() {
+		Assert.assertEquals(1, mm.factorial(0));
+	}
+	
+	/*
+	 *  A test case with a normal input.
+	 */
+	@Test
+	public void testFactorialwithNormalInput() {
+		Assert.assertEquals(120, mm.factorial(5));
+	}
+	
+	/*
+	 *  A test case for the exception caused when the input is <0.
 	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void testFactorialShouldThrowExceptionForNLessThan0() {
@@ -29,7 +45,7 @@ public class MyMathTest {
 	}
 	
 	/*
-	 * A test case for the exception caused when the input is >12
+	 * A test case for the exception caused when the input is >12.
 	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void testFactorialShouldThrowExceptionForNBiggerThan12() {

@@ -32,4 +32,5 @@ public class MyMath {
 		}
 		return n;
 	}
+
 }

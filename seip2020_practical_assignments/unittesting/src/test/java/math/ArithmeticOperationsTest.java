@@ -29,7 +29,8 @@ public class ArithmeticOperationsTest {
 	 * 2) the product does not fit in an double variable.
 	 * Testing the exception is performed with a @Rule
 	 */	
-	
+
+
 	/*
 	 * A test case with normal inputs.
 	 */
@@ -40,35 +41,43 @@ public class ArithmeticOperationsTest {
 	 * to have, before the assertion is false.
 	 */
 	@Test
-	public void testDivision_DivisionWithNormalInputs() {
+	public void testDivide_WithNormalInputs() {
 		Assert.assertEquals(4, ao.divide(10.0, 2.5), 0); //We put delta=0 so that we have preciseness on our results
 	}
-	
+
+	/*
+	 * A test case with numerator equal to 0
+	 */
+	@Test
+	public void testDivide_WithNumeratorEqualTo0() {
+		ao.divide(0.0, 60.0);
+	}
+
 	/*
 	 * A test case for the exception thrown when denominator is 0.
 	 */
 	@Test(expected = ArithmeticException.class)
-	public void testDivision_ShouldThrowExceptionOnDenominatorEqualsTo0() {
+	public void testDivide_ShouldThrowExceptionOnDenominatorEqualsTo0() {
 		ao.divide(2.5, 0.0);
 	}
-	
+
 	/*
 	 * A test case for the exception thrown 
 	 * when the result of the division
 	 * is bigger than the maximum value of a double.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testDivision_ShouldThrowExceptionOnDivisionBiggerThanMAXVALUE() {
+	public void testDivide_ShouldThrowExceptionOnDivisionBiggerThanMAXVALUE() {
 		ao.divide(Double.MAX_VALUE, 0.5);
 	}
-	
+
 	/*
 	 * A test case for the exception thrown 
 	 * when the result of the division
 	 * is less than the minimum value of double.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testDivision_ShouldThrowExceptionOnDivisionLessThanMINVALUE() {
+	public void testDivide_ShouldThrowExceptionOnDivisionLessThanMINVALUE() {
 		ao.divide(Double.MAX_VALUE, -0.5);
 	}
 	
@@ -80,12 +89,13 @@ public class ArithmeticOperationsTest {
 	 * 2) the product does not fit in an Integer variable.
 	 * Testing the exception is performed with a @Rule
 	 */	
-	
+
+
 	/*
 	 * A test case with normal inputs.
 	 */
 	@Test
-	public void testDivision_MultiplicationWithNormalInputs() {
+	public void testMultiply_WithNormalInputs() {
 		Assert.assertEquals(1200, ao.multiply(40, 30));
 	}
 	
@@ -93,7 +103,7 @@ public class ArithmeticOperationsTest {
 	 * A test case with 0 as one input.
 	 */
 	@Test
-	public void testDivision_MultiplicationWith0asInput() {
+	public void testMultiply_With0asInput() {
 		Assert.assertEquals(0, ao.multiply(0, 30));
 	}
 	

@@ -2,7 +2,7 @@ package math;
 
 /**
  * A test class that implements a Parameterized test
- * for the MyMath factorial function
+ * for the MyMath factorial function.
  * 
  * @author louka (loukas.pap@hotmail.gr)
  * @since April 2020
@@ -23,9 +23,9 @@ import org.junit.runners.Parameterized.Parameters;
 public class MyMathFactorialParameterizedTest {
 
 	@Parameter(0) 
-	public int finput;
+	public int finput; //factorial input
 	@Parameter(1)
-	public int fexpected;
+	public int fexpected; //factorial (value) expected
 	
 	MyMath mm = new MyMath();
 	
