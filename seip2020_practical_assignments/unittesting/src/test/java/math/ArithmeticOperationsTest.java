@@ -10,66 +10,64 @@ public class ArithmeticOperationsTest {
 	ArithmeticOperations ao = new ArithmeticOperations();
 	
 	@Test(expected = ArithmeticException.class)
-	public void test_divide_zeroDenominator() {
+	public void testDivision_ShouldThrowExceptionOnDenominatorEqualsTo0() {
 		ao.divide(2.5, 0.0);
 	}
-
-	@Rule
-	public ExpectedException thrown = ExpectedException.none();
 	
-//		@Test
-//		public void test_divide_DenominatorBiggerThanMAX_VALUE() {
-//			thrown.expect(IllegalArgumentException.class);
-//			thrown.expectMessage("numerator and/or denominator do not fit in a Double variable");
-//			ao.divide(Double.MAX_VALUE,Double.MAX_VALUE);
-//		}
-//		@Test
-//		public void test_divide_DenominatorLessThanMIN_VALUE() {
-//			thrown.expect(IllegalArgumentException.class);
-//			thrown.expectMessage("numerator and/or denominator do not fit in a Double variable");
-//			ao.divide(6,-Double.MAX_VALUE-5);
-//		}
+	@Test(expected = IllegalArgumentException.class)
+	public void testDivision_ShouldThrowExceptionOnDivisionBiggerThanMAXVALUE() {
+		ao.divide(Double.MAX_VALUE, 0.5);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testDivision_ShouldThrowExceptionOnDivisionLessThanMINVALUE() {
+		ao.divide(Double.MAX_VALUE, -0.5);
+	}
+	
+
+	/*
+	 * A test case for the exceptions caused when:
+	 * 1) x and/or y are negative, and
+	 * 2) the product does not fit in an Integer variable.
+	 * Testing the exception is performed with a @Rule
+	 */	
+	
+	@Rule
+	public ExpectedException thrown = ExpectedException.none(); //Initializing to .none()
 		
 		@Test
-		public void test_multiply_negativeArgument_X() {
+		public void testMultiply_ShouldThrowExceptionOnNegativeInputsXandY() {
 			thrown.expect(IllegalArgumentException.class);
 			thrown.expectMessage("x and y should be >= 0");
-			ao.multiply(-1, 3);
+			ao.multiply(-240, -20);
 		}
+
 		@Test
-		public void test_multiply_negativeArgument_Y() {
+		public void testMultiply_ShouldThrowExceptionOnNegativeInputX() {
 			thrown.expect(IllegalArgumentException.class);
 			thrown.expectMessage("x and y should be >= 0");
-			ao.multiply(240, -1);
-		}		
+			ao.multiply(-240, 20);
+		}
+
 		@Test
-		public void test_multiply_maxValue_X() {
+		public void testMultiply_ShouldThrowExceptionOnNegativeArgumenInputY() {
+			thrown.expect(IllegalArgumentException.class);
+			thrown.expectMessage("x and y should be >= 0");
+			ao.multiply(240, -20);
+		}
+
+		@Test
+		public void testMultiply_ShouldThrowExceptionOutOfBoundsProductBecauseOfX() {
 			thrown.expect(IllegalArgumentException.class);
 			thrown.expectMessage("The product does not fit in an Integer variable");
-			ao.multiply(2147483647, 240);
+			ao.multiply(Integer.MAX_VALUE, 240);
 		}
+
 		@Test
-		public void test_multiply_maxValue_Y() {
+		public void testMultiply_ShouldThrowExceptionOnOutOfBoundsProductBecauseOfY() {
 			thrown.expect(IllegalArgumentException.class);
 			thrown.expectMessage("The product does not fit in an Integer variable");
-			ao.multiply(240, 2147483647);
+			ao.multiply(240, Integer.MAX_VALUE);
 		}
-		@Test
-		public void test_multiply_minValue_X() {
-			thrown.expect(IllegalArgumentException.class);
-			thrown.expectMessage("x and y should be >= 0");
-			ao.multiply(-2147483647, 240);
-		}
-		@Test
-		public void test_multiply_minValue_Y() {
-			thrown.expect(IllegalArgumentException.class);
-			thrown.expectMessage("x and y should be >= 0");
-			ao.multiply(240, -2147483647);
-		}
-		@Test
-		public void test_multiply_maxValues_XandY() {
-			thrown.expect(IllegalArgumentException.class);
-			thrown.expectMessage("The product does not fit in an Integer variable");
-			ao.multiply(2147483647, 2147483646);
-		}
+
 }

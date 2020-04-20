@@ -8,10 +8,8 @@
     	<version>0.0.1-SNAPSHOT</version>
   	</parent>	
 
-	<groupId>gr.aueb.loukaspapadopoulos</groupId>
 	<artifactId>unittesting</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Arithmetic Operations Unit Testing module</name>
+	<name>unittesting</name>
 	<description>
 		This is the 3rd Assignment of SEiP course.
 		This is a module for testing Arithmetic Operations with junit (Unit Testing).

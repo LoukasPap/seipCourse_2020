@@ -21,9 +21,8 @@ public class ArithmeticOperations {
 	public double divide(double numerator, double denominator) {
 		if (denominator == 0) {
 			throw new ArithmeticException("Cannot divide with zero");
-//		} else if( (numerator < -Double.MAX_VALUE || numerator > Double.MAX_VALUE)
-//				|| (denominator < -Double.MAX_VALUE || denominator > Double.MAX_VALUE) ) {
-//			throw new IllegalArgumentException("numerator and/or denominator do not fit in a Double variable");
+		} else if(numerator/denominator > Double.MAX_VALUE || numerator/denominator < -Double.MAX_VALUE){
+			throw new IllegalArgumentException("the division does not fit in a Double variable");
 		} else {
 			return numerator/denominator;
 		}
