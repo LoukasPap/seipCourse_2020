@@ -8,9 +8,13 @@ branches:
   - master
   - development
 
-before_script: 
+before_script:
   - cd seip2020_practical_assignments  # enter Maven root directory
   - ls -la # this command just prints the contents of the current working directory.
 
+script:
+  - mvn clean package jacoco:report coveralls:report
+    # the coveralls:report is required only for the coveralls coverage service
+
 after_success:
-- echo "Nice job!"
+- "Nice job!"
