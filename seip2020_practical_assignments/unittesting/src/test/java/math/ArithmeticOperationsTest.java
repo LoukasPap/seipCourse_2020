@@ -100,13 +100,20 @@ public class ArithmeticOperationsTest {
 	}
 	
 	/*
-	 * A test case with 0 as one input.
+	 * A test case with x as 0.
 	 */
 	@Test
-	public void testMultiply_With0asInput() {
+	public void testMultiply_WithXas0() {
 		Assert.assertEquals(0, ao.multiply(0, 30));
 	}
 	
+	/*
+	 * A test case with x as 0.
+	 */
+	@Test
+	public void testMultiply_WithYas0() {
+		Assert.assertEquals(0, ao.multiply(578, 0));
+	}	
 	
 	@Rule
 	public ExpectedException thrown = ExpectedException.none(); //Initializing to .none()
