@@ -20,12 +20,12 @@ public class FileIOTest {
 	public static String resourcesPath = "src/test/resources/";
 	
 	/*
-	 * A test case with valid input
+	 * A test case with valid inputs
 	 */
 	@Test
 	public void testReadFile_NormalCase() {
 		int[] expectedValues = new int[] {345, 765, 0, 987, 3, 65, 765};
-		String validInputFilePath = resourcesPath.concat("integers.txt");
+		String validInputFilePath = resourcesPath.concat("integersOnly.txt");
 		
 		Assert.assertArrayEquals(expectedValues, fio.readFile(validInputFilePath));
 	}
@@ -41,8 +41,7 @@ public class FileIOTest {
 	public void testReadFile_ShouldThrowExceptionOnMissingFile() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("Input file does not exist");
-		
-		String validInputFilePath = resourcesPath.concat("whereisit.txt");
+		String validInputFilePath = resourcesPath.concat("missingfile.txt");
 		fio.readFile(validInputFilePath);
 	}
 	
@@ -54,10 +53,21 @@ public class FileIOTest {
 	public void testReadFile_ShouldThrowExceptionOnEmptyFile() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("Given file is empty");
-		
 		String validInputFilePath = resourcesPath.concat("empty.txt");
 		fio.readFile(validInputFilePath);
 	}
-	
+
+	/*
+	 * A test case that checks
+	 * that the non-integers values are not parsed.
+	 */
+	@Test
+	public void testReadFileContainsInvalidEntries() {
+		String validInputFilePath = resourcesPath.concat("multipleValues.txt");
+		fio.readFile(validInputFilePath);
+		
+		int[] expectedValues = new int[] {4, 5432, 613, 2222, 141832};
+		Assert.assertArrayEquals(expectedValues, fio.readFile(validInputFilePath));
+	}
 	
 }

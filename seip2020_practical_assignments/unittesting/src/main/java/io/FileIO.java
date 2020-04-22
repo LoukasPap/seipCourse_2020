@@ -12,9 +12,8 @@ import java.util.List;
 * The FileIO provides simple file input/output operations
 * that serve as hands-on practice on Unit Testing.
 *
-* @author  lpapadopoulos
-* @version 1.0
-* @since   2020-04-06 
+* @author  louka
+* @since   April 2020
 */
 public class FileIO {
 	
@@ -27,20 +26,27 @@ public class FileIO {
 	 * @exception IllegalArgumentException when the given file is empty
 	 * @exception IOException when an IO interruption occurs (not required to be tested)
 	 */
-	public int[] readFile(String filepath) {
+	public  int[] readFile(String filepath) {
 		File file = new File(filepath);
 		if (!file.exists()) 
 			throw new IllegalArgumentException("Input file does not exist");
 		
 		List<Integer> numbersList = new ArrayList<>();
 		BufferedReader reader;
+		
 		try {
 			reader = new BufferedReader(new FileReader(file));
 			String line = null;
 			while ((line = reader.readLine()) != null) {
-				int number = Integer.parseInt(line);
-				numbersList.add(number);
+				try {
+						System.out.println(Integer.parseInt(line));
+						int number = Integer.parseInt(line);
+						numbersList.add(number);
+				} catch(NumberFormatException e) {
+					
+				}
 			}
+			reader.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -48,7 +54,7 @@ public class FileIO {
 		if (numbersList.size() == 0) 
 			throw new IllegalArgumentException("Given file is empty");
 		
-		// Convert a List to an array using 
+		// Convert a List to an array using
 		return numbersList.stream().mapToInt(i -> i).toArray();
 	}
 
