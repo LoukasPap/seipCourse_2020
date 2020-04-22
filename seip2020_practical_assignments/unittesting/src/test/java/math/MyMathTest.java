@@ -9,7 +9,9 @@ package math;
  */
 
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 
 public class MyMathTest {
@@ -32,7 +34,7 @@ public class MyMathTest {
 	 *  A test case with a normal input.
 	 */
 	@Test
-	public void testFactorialwithNormalInput() {
+	public void testFactorial_WithNormalInput() {
 		Assert.assertEquals(120, mm.factorial(5));
 	}
 	
@@ -40,7 +42,7 @@ public class MyMathTest {
 	 *  A test case for the exception caused when the input is <0.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testFactorialShouldThrowExceptionForNLessThan0() {
+	public void testFactorial_ShouldThrowExceptionForNLessThan0() {
 		Assert.assertEquals("n should be between 0 and 12", mm.factorial(-5));
 	}
 	
@@ -48,24 +50,52 @@ public class MyMathTest {
 	 * A test case for the exception caused when the input is >12.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testFactorialShouldThrowExceptionForNBiggerThan12() {
+	public void testFactorial_ShouldThrowExceptionForNBiggerThan12() {
 		Assert.assertEquals("n should be between 0 and 12", mm.factorial(14));
 	}
 	
 	
-/*	
- 	Tests in case we need to test exceptions thrown on wrong type of arguments
- 	
-	@Ignore
-	@Test(expected = Error.class)
-	public void test_factorial_nShouldNotBeDouble() {
-		Assert.assertEquals("n should not be double", mm.factorial(5.5));
-	}
-	@Ignore
-	@Test(expected = Error.class)
-	public void test_factorial_nShouldNotBeString() {
-		Assert.assertEquals("n should not be double", mm.factorial("x"));
+	/**
+	 * Test for isPrime function
+	 */
+	
+	/*
+	 * Test case with normal input
+	 */
+	@Test
+	public void testPrime_WithNormalInput() {
+		Assert.assertTrue(mm.isPrime(337));
 	}
 	
-*/
+	@Rule
+	public ExpectedException thrown = ExpectedException.none(); //Initializing to .none()
+	
+	/*
+	 * A test case for the exception caused when the inut is negative
+	 */
+	@Test
+	public void testPrime_ShouldThrowExceptionOnNegativeInput() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("n should be bigger or equal to 2");
+		mm.isPrime(-2600);
+	}
+	
+	/*
+	 * A test case for the exception caused when the input is 0
+	 */
+	@Test
+	public void testPrime_ShouldThrowExceptionOn0AsAnInput() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("n should be bigger or equal to 2");
+		mm.isPrime(0);
+	}
+	
+	/*
+	 * A test case for the exception caused when the input is MAX_VALUE
+	 */
+	@Test
+	public void testPrime_ShouldThrowExceptionOnMaxValueAsAnInput() {
+		Assert.assertTrue(mm.isPrime(Integer.MAX_VALUE));
+	}
+	
 }
