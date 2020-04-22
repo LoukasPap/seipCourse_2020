@@ -94,7 +94,7 @@ public class MyMathTest {
 	 * A test case for the exception caused when the input is MAX_VALUE
 	 */
 	@Test
-	public void testPrime_ShouldThrowExceptionOnMaxValueAsAnInput() {
+	public void testPrime_WithMaxValueAsAnInput() {
 		Assert.assertTrue(mm.isPrime(Integer.MAX_VALUE));
 	}
 	

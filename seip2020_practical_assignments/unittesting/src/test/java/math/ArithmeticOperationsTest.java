@@ -108,7 +108,7 @@ public class ArithmeticOperationsTest {
 	}
 	
 	/*
-	 * A test case with x as 0.
+	 * A test case with y as 0.
 	 */
 	@Test
 	public void testMultiply_WithYas0() {
