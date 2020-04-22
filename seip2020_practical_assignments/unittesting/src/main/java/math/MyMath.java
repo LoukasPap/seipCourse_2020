@@ -32,5 +32,36 @@ public class MyMath {
 		}
 		return n;
 	}
-
+	
+	
+	
+	
+	/**
+	 * Prime function
+	 */
+	public boolean isPrime(int n) {
+		boolean prime = true;
+		try {
+			if(n < 2) {
+				throw new IllegalArgumentException("n should be bigger or equal to 2");
+			} else {
+				int i = 2;
+		        while(i <= n/2) {
+		            if(n % i == 0){ // condition for nonprime number
+		                prime = false;
+		                i = n/2;
+		                
+		            }
+		            ++i;
+		        }
+			}
+		} catch(NumberFormatException e) {
+			System.err.println("The argument is not an integer");
+		}
+		return prime;
+	}
 }
+	
+//	public static void main(String[] args) {
+//		System.out.println(isPrime(Integer.MAX_VALUE));
+//	}
