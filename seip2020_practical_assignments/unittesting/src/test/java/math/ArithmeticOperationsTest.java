@@ -22,19 +22,10 @@ public class ArithmeticOperationsTest {
 	 */
 	ArithmeticOperations ao = new ArithmeticOperations();
 	
-	/*
-	 * The tested function is divide.
-	 * Test cases for the exceptions caused when:
-	 * 1) denominator is 0
-	 * 2) the product does not fit in an double variable.
-	 * Testing the exception is performed with a @Rule
-	 */	
-
 
 	/*
 	 * A test case with normal inputs.
-	 */
-	/**
+	 * 
 	 * In order to do that, we are using the:
 	 * @function Assert.assertEquals(double expected, double actual, double delta)
 	 * @param delta is the maximum distance that the expected and actual values are allowed 
@@ -81,15 +72,6 @@ public class ArithmeticOperationsTest {
 		ao.divide(Double.MAX_VALUE, -0.5);
 	}
 	
-
-	/*
-	 * The tested function is multiply.
-	 * Test cases for the exceptions caused when:
-	 * 1) x and/or y are negative, and
-	 * 2) the product does not fit in an Integer variable.
-	 * Testing the exception is performed with a @Rule
-	 */	
-
 
 	/*
 	 * A test case with normal inputs.

@@ -1,15 +1,17 @@
 package io;
 
+/**
+ * Test cases for the FileIO class.
+ * 
+ * @author loukas(loukas.pap@hotmail.gr)
+ * @since April 2020
+ */
+
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-/**
- * 
- * @author louka
- * @since April 2020
- */
 public class FileIOTest {
 	
 	/* 

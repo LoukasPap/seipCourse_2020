@@ -3,7 +3,7 @@ package math;
 /**
 * A class that provides two simple arithmetic operations
 *
-* @author louka (loukas.pap@hotmail.gr)
+* @author loukas(loukas.pap@hotmail.gr)
 * @since April 2020
 */
 

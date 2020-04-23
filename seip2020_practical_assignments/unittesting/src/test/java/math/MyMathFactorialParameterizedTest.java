@@ -40,7 +40,6 @@ public class MyMathFactorialParameterizedTest {
 		return Arrays.asList(data);
 	}
 	
-	
 	/*
 	 * The test which is executed for each pair of 
 	 * parameters. 

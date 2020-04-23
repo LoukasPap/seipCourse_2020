@@ -55,16 +55,20 @@ public class MyMathTest {
 	}
 	
 	
-	/**
-	 * Test for isPrime function
-	 */
-	
 	/*
-	 * Test case with normal input
+	 * A test case with prime input
 	 */
 	@Test
-	public void testPrime_WithNormalInput() {
+	public void testPrime_WithPrimeInput() {
 		Assert.assertTrue(mm.isPrime(337));
+	}
+	
+	/*
+	 * A test case with composite number
+	 */
+	@Test
+	public void testPrime_WithCompositeInput() {
+		Assert.assertFalse(mm.isPrime(226));
 	}
 	
 	@Rule

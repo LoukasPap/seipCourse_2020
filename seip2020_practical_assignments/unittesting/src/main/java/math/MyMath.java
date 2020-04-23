@@ -1,9 +1,9 @@
 package math;
 
 /**
- * A class that finds the factorial of a given input
+ * A class that executes advanced mathematic operations
  * 
- * @author louka (loukas.pap@hotmail.gr)
+ * @author loukas(loukas.pap@hotmail.gr)
  * @since April 2020
  */
 
@@ -33,14 +33,17 @@ public class MyMath {
 		return n;
 	}
 	
-	
-	
-	
 	/**
-	 * Prime function
-	 */
+	 * Receives an Integer number and returns true if it a prime number
+	 * Arguments less than 2 cause an {@link IllegalArgumentException} 
+	 * @param n is the integer input number
+	 * @return an true if the input is prime, or false if the input is composite (non-prime)
+	 * @exception NumberFormatException when the input is not an Integer
+	 */	
+
 	public  boolean isPrime(int n) {
 		boolean prime = true;
+
 		try {
 			if(n < 2) {
 				throw new IllegalArgumentException("n should be bigger or equal to 2");
@@ -55,13 +58,8 @@ public class MyMath {
 		        }
 			}
 		} catch(NumberFormatException e) {
-
+			prime = false;
 		}
 		return prime;
 	}
-
-	
-//	public static void main(String[] args) {
-//		System.out.println(isPrime(Integer.MAX_VALUE+1));
-//	}
 }
