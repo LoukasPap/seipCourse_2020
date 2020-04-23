@@ -1,9 +1,15 @@
 # 3rd Assignment: Unit Testing
 
-This module aims to run multiple kinds of tests (JUnit) in multiple ways for 3 arithmetic operations:
-1. Division
-2. Multiplication
-3. Factorial
+This module aims to run multiple kinds of tests (JUnit) in multiple ways for arithmetic and non-arithmetic operations:
+
+_Arithmetic tests_
+* Division
+* Multiplication
+* Factorial
+* Prime numbers
+
+_File test_
+* Searching file
 
 After you have built the project following the [steps](https://github.com/LoukasPap/seipCourse_2020/blob/development/README.md) in the first README.md, continue below to run the tests.
 
