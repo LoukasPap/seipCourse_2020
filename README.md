@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/LoukasPap/seipCourse_2020.svg?token=worE1p1ZU1jtrUEf1Sa6&branch=development)](https://travis-ci.com/LoukasPap/seipCourse_2020)
+[![codecov](https://codecov.io/gh/LoukasPap/seipCourse_2020/branch/master/graph/badge.svg?token=AL0BBLBUMQ)](https://codecov.io/gh/LoukasPap/seipCourse_2020)
 
 # seipCourse_2020
 Software Engineering in Practice Course | 2020
