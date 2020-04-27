@@ -44,22 +44,18 @@ public class MyMath {
 	public  boolean isPrime(int n) {
 		boolean prime = true;
 
-		try {
-			if(n < 2) {
-				throw new IllegalArgumentException("n should be bigger or equal to 2");
-			} else {
-				int i = 2;
-		        while(i <= n/2) {
-		            if(n % i == 0){ //Condition for composite(or non-prime) number
-		                prime = false;
-		                i = n/2;
-		            }
-		            ++i;
-		        }
-			}
-		} catch(NumberFormatException e) {
-			prime = false;
+		if(n < 2) {
+			throw new IllegalArgumentException("n should be bigger or equal to 2");
+		} else {
+			int i = 2;
+	        while(i <= n/2) {
+	            if(n % i == 0){ //Condition for composite(or non-prime) number
+	                prime = false;
+	                i = n/2;
+	            }
+	            ++i;
+	        }
 		}
-		return prime;
+	return prime;
 	}
 }

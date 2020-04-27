@@ -41,7 +41,7 @@ public class ArithmeticOperationsTest {
 	 */
 	@Test
 	public void testDivide_WithNumeratorEqualTo0() {
-		ao.divide(0.0, 60.0);
+		Assert.assertEquals(0, ao.divide(0.0, 60.0), 0);
 	}
 
 	/*
