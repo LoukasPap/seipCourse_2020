@@ -7,17 +7,17 @@ branches:
   only:
   - master
   - development
-  
+
 env:
   global:
-    - CODECOV_TOKEN=:uuid-repo-token
+    - CODECOV_TOKEN=:a04721e4-f2fb-46f8-83a3-ccedb2a9b2f8
 
 before_script:
   - cd seip2020_practical_assignments  # enter Maven root directory
   - ls -la # this command just prints the contents of the current working directory.
 
 script:
-  - mvn clean package jacoco:report
+  - mvn clean package jacoco:report cobertura:cobertura
 
 after_success:
 - bash <(curl -s https://codecov.io/bash) -t a04721e4-f2fb-46f8-83a3-ccedb2a9b2f8
