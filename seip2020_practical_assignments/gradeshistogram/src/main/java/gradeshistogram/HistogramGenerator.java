@@ -13,9 +13,10 @@ import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
 /***
+ * The purpose of this class, is to complete the 2nd assignment
+ * of the course 'Software Engineering in Practice'."
  * 
- * @author louka The purpose of this class, is to complete the 2nd assignment
- * 				 of the course 'Software Engineering in Practice'."
+ * @author loukas
  * @since May 2020
  */
 
