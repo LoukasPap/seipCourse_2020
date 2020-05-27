@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
   	<parent>
-	   	<groupId>gr.aueb.dmst.loukaspapadopoulos</groupId>
-	   	<artifactId>seip2020_practical_assignments</artifactId>
-	   	<version>0.0.1-SNAPSHOT</version>
+  	  <groupId>gr.aueb.dmst.loukaspapadopoulos</groupId>
+  	  <artifactId>seip2020_practical_assignments</artifactId>
+  	  <version>0.0.1-SNAPSHOT</version>
   	</parent>
-	<artifactId>sourcecodeanalyzer</artifactId>
-	<name>sourcecodeanalyzer</name>
-	<description>
-		This is the 4th Assignment of SEip Course.
+  	<artifactId>sourcecodeanalyzer</artifactId>
+  	<name>sourcecodeanalyzer</name>
+ 	<description>
+  		This is the 4th Assignment of SEip Course.
 		This is a module for executing the following steps:
 			1. reading a Java source code file,
 			2. calculating: Lines of Code (LOC), Number of Methods (NOM) and Number of Classes (NOC), and
@@ -46,4 +46,5 @@
 			
 		</plugins>
 	</build>
+	
 </project>
