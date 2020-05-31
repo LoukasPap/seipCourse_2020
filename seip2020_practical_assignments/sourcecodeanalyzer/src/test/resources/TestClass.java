@@ -5,22 +5,23 @@ public class Class1 {
  /* long comment 1 */
  
  /* 
- * 
+ (){
  * long comment 2 
  */
 
-	public void foo() {}
+	public void foo(){}
 
 	String foo2() {
-		int x = Math.pow(2,2);
+		protected int x = Math.pow(2,2);
 	}
 }
 
-class Class2{
+class Class2
+{
 
-	static void foo3(){
+	private static void foo3() {
 
-} 
+	} 
 
 }
 
