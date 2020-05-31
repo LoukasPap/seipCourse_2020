@@ -19,14 +19,14 @@ The executable .jar takes 5 arguments:
 After you have built the project following the [steps](https://github.com/LoukasPap/seipCourse_2020/blob/development/README.md) in the first README.md, continue below to run the module.
 
 ### How to run
-java -jar _path of jar_ _filepath_ _source code analyzer_ _source code location_ _output filepath_ _output file type_
+java -jar _pathOfJar_ _filepath_ _sourceCodeAnalyzer_ _sourceCodeLocation_ _outputFilepath_ _outputFileType_
 
-where _path of jar_ is something like .../sourcecodeanalyzer/target/sourcecodeanalyzer-0.0.1-SNAPSHOT-jar-with-dependencies.jar,
+where _pathOfJar_ is something like .../sourcecodeanalyzer/target/sourcecodeanalyzer-0.0.1-SNAPSHOT-jar-with-dependencies.jar,
 _filepath_ is something like .../sourcecodeanalyzer/src/main/resources/TestClass.java,
-_source code analyzer_ is **regex** or **strcomp**,
-_source code location_ is **local** or **web**,
-_output filepath_ is something like .../sourcecodeanalyzer/src/main/resources/outputs
-and _output file type_ is **csv**
+_sourceCodeAnalyzer_ is **regex** or **strcomp**,
+_sourceCodeLocation_ is **local** or **web**,
+_outputFilepath_ is something like .../sourcecodeanalyzer/src/main/resources/outputs
+and _outputFileType_ is **csv**
 
 ## About the DesignPatterns
 1. Which patterns do I use
