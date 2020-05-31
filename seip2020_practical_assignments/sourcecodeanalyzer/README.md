@@ -47,7 +47,7 @@ and _output file type_ is **csv**
      classes that implement the interface _FileWriter_, and are handle by the basic class of this pattern _MetricsExporterFactory_.
 
 ## UML diagram
-![UML Design Patterns](http://url/to/img.png)
+<img src="media/UML.jpg" width="500"/>
 
 ## Test project
 To simply run all the unit tests, execute from command line
