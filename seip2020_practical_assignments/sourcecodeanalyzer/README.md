@@ -19,7 +19,7 @@ The executable .jar takes 5 arguments:
 After you have built the project following the [steps](https://github.com/LoukasPap/seipCourse_2020/blob/development/README.md) in the first README.md, continue below to run the module.
 
 ### How to run
-java -jar <path of jar> <filepath> <source code analyzer> <source code location> <output filepath> <output file type>
+java -jar _path of jar_ _filepath_ _source code analyzer_ _source code location_ _output filepath_ _output file type_
 
 where _path of jar_ is something like .../sourcecodeanalyzer/target/sourcecodeanalyzer-0.0.1-SNAPSHOT-jar-with-dependencies.jar,
 _filepath_ is something like .../sourcecodeanalyzer/src/main/resources/TestClass.java,
