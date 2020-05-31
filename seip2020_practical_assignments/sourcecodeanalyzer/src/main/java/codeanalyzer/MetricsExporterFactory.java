@@ -1,54 +1,33 @@
 package codeanalyzer;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Map;
 
 /**
  * Exports (writes) the metrics to a given output.
  * The output can be CSV or JSON files.
- * This class deliberately contains code smells and violations of design principles. 
+ * 
  * @author loukas
- *
+ * @since May 2020
  */
-public class MetricsExporter {
+public class MetricsExporterFactory {
 	
+	/**
+	 * Writes the metrics into a type of file (csv or json).
+	 * 
+	 * @param outputType the type which the file will be exported
+	 * @param metrics the metrics stored in a map
+	 * @param filepath the url of the file
+	 */
 	public void writeFile(String outputType, Map<String, Integer> metrics, String filepath) {
+		codeanalyzer.FileWriter writer;
 		if (outputType.equals("csv")) {
-			writeCsv(metrics, filepath);
+			writer = new CsvWriter();
 		} else if (outputType.equals("json")) {
-			writeJson(metrics, filepath);
+			writer = new JsonWriter();
 		} else {
-			throw new IllegalArgumentException("Unknown type : " + outputType);
-		}
-	}
-	
-	private void writeCsv(Map<String, Integer> metrics, String filepath) {
-		File outputFile = new File(filepath + ".csv");
-		StringBuilder metricsNames = new StringBuilder();
-		StringBuilder metricsValues = new StringBuilder();
-		
-		for (Map.Entry<String, Integer> entry : metrics.entrySet()) {
-			metricsNames.append(entry.getKey() + ",");
-			metricsValues.append(entry.getValue()+",");
+			writer = new NullWriter();
 		}
 		
-		try {
-			FileWriter writer = new FileWriter(outputFile);
-			writer.append(metricsNames + "\n");
-			writer.append(metricsValues + "\n");
-			writer.close();
-			System.out.println("Metrics saved in " + outputFile.getAbsolutePath());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-	}
-	
-	private void writeJson(Map<String, Integer> metrics, String filepath) {
-		// Functionality not implemented yet
-		// No need to implement it for the assignment
-	}
-
+		writer.writeFile(metrics, filepath);
+	}	
 }
