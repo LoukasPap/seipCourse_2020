@@ -7,11 +7,11 @@ import codeanalyzer.Facade;
 public class DemoClient {
 
 	public static void main(String[] args) throws IOException {
-		String filepath = "src/main/resources/TestClass.java";
-		String sourceCodeAnalyzerType = "regex";
-		String sourceFileLocation = "local";
-		String outputFilePath = "output_metrics";
-		String outputFileType = "csv";
+		String filepath;
+		String sourceCodeAnalyzerType;
+		String sourceFileLocation;
+		String outputFilePath;
+		String outputFileType;
 		
 		if(args.length == 5) {
 			filepath = args[0];
