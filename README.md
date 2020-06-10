@@ -7,6 +7,7 @@ Software Engineering in Practice Course | 2020
 This is a private repository for delivering all the assignments of the course "Software Engineering in Practice".
 * 1st Assignment: [HistogramGenerator](./seip2020_practical_assignments/gradeshistogram)
 * 2nd Assignment: [UnitTesting](./seip2020_practical_assignments/unittesting)
+* 3rd Assignment: [DesignPatterns](./seip2020_practical_assignments/sourcecodeanalyzer)
 
 __Before you navigate to any of the assignments, it is recommended you first read below.__
 
